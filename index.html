@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>📄 PDF News Summarizer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+    <h1>📄 Multilingual Summarizer</h1>
+
+    <form method="post" enctype="multipart/form-data" class="card">
+
+        <textarea name="text" rows="5" placeholder="Paste text here..."></textarea>
+
+        <input type="text" name="url" placeholder="Paste article URL..." />
+
+        <input type="file" name="pdf" accept=".pdf" />
+
+        <select name="language">
+            <option value="en">English</option>
+            <option value="hi">Hindi</option>
+            <option value="te">Telugu</option>
+            <option value="ta">Tamil</option>
+            <option value="kn">Kannada</option>
+            <option value="ml">Malayalam</option>
+        </select>
+
+        <button type="submit">Summarize 🚀</button>
+    </form>
+
+    {% if summary %}
+    <div class="result">
+        <h3>✅ Summary</h3>
+        <p>{{ summary }}</p>
+    </div>
+    {% endif %}
+</div>
+</body>
+</html>
