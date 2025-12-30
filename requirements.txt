@@ -1,0 +1,9 @@
+%%writefile requirements.txt
+flask
+transformers
+torch
+newspaper3k
+googletrans==4.0.0-rc1
+PyPDF2
+lxml
+lxml_html_clean
