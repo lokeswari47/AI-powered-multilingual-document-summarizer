@@ -59,11 +59,11 @@ def home():
                 content = text_input
 
             else:
-                final_summary = "❌ Please provide text, URL, or PDF."
+                final_summary = " Please provide text, URL, or PDF."
                 return render_template("index.html", summary=final_summary)
 
             if not content.strip():
-                final_summary = "❌ No readable text found."
+                final_summary = " No readable text found."
                 return render_template("index.html", summary=final_summary)
 
             # Handle long text (chunking)
@@ -89,9 +89,10 @@ def home():
                 final_summary = summary_text
 
         except Exception as e:
-            final_summary = f"❌ Error: {e}"
+            final_summary = f" Error: {e}"
 
     return render_template("index.html", summary=final_summary)
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=8000, debug=False)
+
